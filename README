@@ -2,6 +2,11 @@ ereiamjh========
 
 Ruby library and command-line tool to announce your geographic location to Twitter.
 
+From the command line:
+
+> ereiamjh twitter_login twitter_password
+
+
 COPYRIGHT
 =========
 
