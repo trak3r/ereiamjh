@@ -1,7 +1,8 @@
 ereiamjh========
-Description goes here.
+
+Ruby library and command-line tool to announce your geographic location to Twitter.
 
 COPYRIGHT
 =========
 
-Copyright (c) 2008 Teflon Ted. See LICENSE for details.
+Copyright (c) 2008 Thomas 'Ted' Davis. See LICENSE for details.

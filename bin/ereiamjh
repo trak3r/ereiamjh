@@ -1,0 +1,2 @@
+#!/opt/local/bin/ruby
+EreIAmJH.new(ARGV[0], ARGV[1]).announce

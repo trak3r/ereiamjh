@@ -4,11 +4,11 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |s|
     s.name = "ereiamjh"
-    s.summary = %Q{TODO}
+    s.summary = %Q{Ruby library and command-line tool to announce your geographic location to Twitter.}
     s.email = "github@rudiment.net"
     s.homepage = "http://github.com/trak3r/ereiamjh"
-    s.description = "TODO"
-    s.authors = ["Teflon Ted"]
+    s.description = "Ruby library and command-line tool to announce your geographic location to Twitter."
+    s.authors = ["Thomas 'Ted' Davis"]
   end
 rescue LoadError
   puts "Jeweler not available. Install it with: sudo gem install technicalpickles-jeweler -s http://gems.github.com"
