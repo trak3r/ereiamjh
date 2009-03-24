@@ -44,11 +44,14 @@ class EreIAmJH
   def announce
     response = self.class.get('/myip.xml')
     dnstools = response['dnstools']
-    city = dnstools['city']
-    state = dnstools['region']
-    isp = dnstools['isp']
-    ip = dnstools['ip_address']
-    msg = "Hello from #{city}, #{state}!  I'm on #{isp} as #{ip}"
-    Twitter::Base.new(@username, @password).update(msg)
+    city     = dnstools['city']
+    state    = dnstools['region']
+    isp      = dnstools['isp']
+    ip       = dnstools['ip_address']
+    location = "#{city}, #{state}"
+    msg      = "Hello from #{location}!  I'm on #{isp} as #{ip}"
+    twitter  = Twitter::Base.new(@username, @password)
+    twitter.update(msg)
+    twitter.update_location(location)
   end
 end
