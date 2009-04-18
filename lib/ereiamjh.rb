@@ -50,8 +50,8 @@ class EreIAmJH
     ip       = dnstools['ip_address']
     location = "#{city}, #{state}"
     msg      = "Hello from #{location}!  I'm on #{isp} as #{ip}"
-    twitter  = Twitter::Base.new(@username, @password)
+    twitter  = Twitter::Base.new(Twitter::HTTPAuth.new(@username, @password))
     twitter.update(msg)
-    twitter.update_location(location)
+    twitter.update_profile(:location => location)
   end
 end
