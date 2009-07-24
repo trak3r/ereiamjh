@@ -1,6 +1,6 @@
 require 'rubygems'
-require 'httparty'
-require 'twitter'
+# require 'httparty'
+require 'twitter' # requires 'httparty
 
 class EreIAmJH
   include HTTParty
