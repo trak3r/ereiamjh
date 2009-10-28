@@ -2,6 +2,18 @@ require 'rubygems'
 # require 'httparty'
 require 'twitter' # requires 'httparty
 
+LAST_FILE = '.ereiamjh'
+
+def last_msg
+  File.open(LAST_FILE, 'r').read.strip if File.exists?(LAST_FILE)
+end
+
+def set_last_msg(msg)
+  File.open(LAST_FILE, 'w') do |file|
+    file.puts msg.strip
+  end
+end
+
 class EreIAmJH
   include HTTParty
   base_uri 'ip-address.domaintools.com'
@@ -50,8 +62,11 @@ class EreIAmJH
     ip       = dnstools['ip_address']
     location = "#{city}, #{state}"
     msg      = "Hello from #{location}!  I'm on #{isp} as #{ip}"
-    twitter  = Twitter::Base.new(Twitter::HTTPAuth.new(@username, @password))
-    twitter.update(msg)
-    twitter.update_profile(:location => location)
+    unless last_msg == msg
+      twitter  = Twitter::Base.new(Twitter::HTTPAuth.new(@username, @password))
+      twitter.update(msg)
+      twitter.update_profile(:location => location)
+      set_last_msg(msg)
+    end
   end
 end
